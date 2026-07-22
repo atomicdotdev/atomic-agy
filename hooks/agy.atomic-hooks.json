@@ -1,0 +1,30 @@
+{
+  "target": "~/.gemini/config/plugins/atomic/hooks.json",
+  "hooks_key": "atomic",
+  "command_prefix": "atomic agent hooks agy",
+  "hooks": {
+    "PreInvocation": [
+      {
+        "type": "command",
+        "command": "atomic agent hooks agy pre-invocation || true"
+      }
+    ],
+    "Stop": [
+      {
+        "type": "command",
+        "command": "atomic agent hooks agy stop || true"
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "atomic agent hooks agy post-tool-use || true"
+          }
+        ]
+      }
+    ]
+  }
+}

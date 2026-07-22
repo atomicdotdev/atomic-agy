@@ -1,0 +1,5 @@
+{
+  "$schema": "https://antigravity.google/schemas/v1/plugin.json",
+  "name": "atomic",
+  "description": "Record every agent turn as an Atomic change with full AI provenance."
+}

@@ -1,0 +1,33 @@
+{
+  "name": "atomic-agy",
+  "version": "0.1.0",
+  "description": "Atomic VCS integration for Antigravity CLI (agy) — automatic turn recording with AI provenance, intent tracking, and knowledge graph skills.",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/atomicdotdev/atomic-agy"
+  },
+  "keywords": [
+    "atomic",
+    "antigravity",
+    "agy",
+    "google",
+    "vcs",
+    "provenance",
+    "ai-agent",
+    "version-control"
+  ],
+  "files": [
+    "hooks/",
+    "plugin/",
+    "AGENTS.md",
+    "install.js",
+    "install.sh"
+  ],
+  "bin": {
+    "atomic-agy": "install.js"
+  },
+  "scripts": {
+    "postinstall": "node install.js --silent"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "atomic": {
+    "PreInvocation": [
+      {
+        "type": "command",
+        "command": "atomic agent hooks agy pre-invocation || true"
+      }
+    ],
+    "Stop": [
+      {
+        "type": "command",
+        "command": "atomic agent hooks agy stop || true"
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "atomic agent hooks agy post-tool-use || true"
+          }
+        ]
+      }
+    ]
+  }
+}
