@@ -1,0 +1,15 @@
+{
+  "target": "~/.gemini/config/import_manifest.json",
+  "hooks_key": "hooks",
+  "command_prefix": "\"name\": \"atomic\"",
+  "hooks": {},
+  "merge": {
+    "imports": [
+      {
+        "name": "atomic",
+        "source": "antigravity",
+        "components": ["hooks", "skills"]
+      }
+    ]
+  }
+}
