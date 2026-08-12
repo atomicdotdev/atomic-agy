@@ -8,24 +8,16 @@ atomic = ">=0.11.0"
 [skills-source]
 package = "atomic-skills"
 
+# Skills (flat <name>.md, resolved from the atomic-skills cache)
+[skills]
+install = "all"
+dst_pattern = "~/.gemini/config/plugins/atomic/skills/{name}.md"
+
 # Agent instruction file → agy's global context slot (shared with gemini-cli;
 # the installer never overwrites a user-modified GEMINI.md).
 [[skill]]
 src = "AGENTS.md"
 dst = "~/.gemini/GEMINI.md"
-
-# Skills (flat <name>.md, resolved from the atomic-skills cache)
-[[skill]]
-src = "skills/atomic-vault/SKILL.md"
-dst = "~/.gemini/config/plugins/atomic/skills/atomic-vault.md"
-
-[[skill]]
-src = "skills/atomic-vcs/SKILL.md"
-dst = "~/.gemini/config/plugins/atomic/skills/atomic-vcs.md"
-
-[[skill]]
-src = "skills/code-intelligence/SKILL.md"
-dst = "~/.gemini/config/plugins/atomic/skills/code-intelligence.md"
 
 [[repo-file]]
 src = "AGENTS.md"
