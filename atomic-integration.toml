@@ -5,11 +5,23 @@ version = "1.0.0"
 [requires]
 atomic = ">=0.11.0"
 
+[skills-source]
+package = "atomic-skills"
+
+# Skills (flat <name>.md, resolved from the atomic-skills cache)
+[skills]
+install = "all"
+dst_pattern = "~/.gemini/config/plugins/atomic/skills/{name}.md"
+
 # Agent instruction file → agy's global context slot (shared with gemini-cli;
 # the installer never overwrites a user-modified GEMINI.md).
-[[file]]
+[[skill]]
 src = "AGENTS.md"
 dst = "~/.gemini/GEMINI.md"
+
+[[repo-file]]
+src = "AGENTS.md"
+dst = "AGENTS.md"
 
 # The agy plugin bundle, staged exactly where `agy plugin install` would put it.
 [[file]]
@@ -19,18 +31,6 @@ dst = "~/.gemini/config/plugins/atomic/plugin.json"
 [[file]]
 src = "plugin/hooks.json"
 dst = "~/.gemini/config/plugins/atomic/hooks.json"
-
-[[file]]
-src = "plugin/skills/atomic-vault.md"
-dst = "~/.gemini/config/plugins/atomic/skills/atomic-vault.md"
-
-[[file]]
-src = "plugin/skills/atomic-vcs.md"
-dst = "~/.gemini/config/plugins/atomic/skills/atomic-vcs.md"
-
-[[file]]
-src = "plugin/skills/code-intelligence.md"
-dst = "~/.gemini/config/plugins/atomic/skills/code-intelligence.md"
 
 # Register the plugin in agy's import manifest (deep merge — the "atomic"
 # entry is unioned into the imports array, existing content preserved).
